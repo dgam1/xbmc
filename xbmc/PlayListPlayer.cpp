@@ -876,7 +876,7 @@ void PLAYLIST::CPlayListPlayer::OnApplicationMessage(KODI::MESSAGING::ThreadMess
         if (list->Size() == 1 && !(*list)[0]->IsPlayList())
         {
           CFileItemPtr item = (*list)[0];
-          if (item->IsAudio() || item->IsVideo())
+          if (item->IsAudio() || item->IsVideo() || item->IsLiveTV())
             Play(item, pMsg->strParam);
           else
             g_application.PlayMedia(*item, pMsg->strParam, playlist);

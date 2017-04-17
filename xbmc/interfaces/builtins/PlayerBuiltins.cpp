@@ -470,7 +470,7 @@ static int PlayMedia(const std::vector<std::string>& params)
     g_playlistPlayer.SetCurrentPlaylist(playlist);
     g_playlistPlayer.Play(playOffset, "");
   }
-  else if (item.IsAudio() || item.IsVideo())
+  else if (item.IsAudio() || item.IsVideo() || item.IsLiveTV())
     g_playlistPlayer.Play(std::make_shared<CFileItem>(item), "");
   else
     g_application.PlayMedia(item, "", PLAYLIST_NONE);
